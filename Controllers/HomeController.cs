@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Blog.Models;
 
 namespace Blog.Controllers
 {
@@ -16,6 +17,17 @@ namespace Blog.Controllers
         public IActionResult Post()
         {
             return View();
+        }
+
+        public IActionResult Edit()
+        {
+            return View(new Post());
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Post _post)
+        {
+            return RedirectToAction("Index");
         }
     }
 }
