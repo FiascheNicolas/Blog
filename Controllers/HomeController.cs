@@ -6,15 +6,16 @@ using System.Text;
 using System.Threading.Tasks;
 using Blog.Models;
 using Blog.Data;
+using Blog.Data.Repository;
 
 namespace Blog.Controllers
 {
     public class HomeController : Controller
     {
-        private AppDbContext _ctx;
-        public HomeController(AppDbContext ctx)
-        {
-            _ctx = ctx;
+        private IRepository _repo;
+
+        public HomeController(IRepository repo) {
+            _repo = repo;
         }
 
         public IActionResult Index() {
@@ -34,9 +35,15 @@ namespace Blog.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(Post _post)
         {
-            _ctx.Posts.Add(_post);
-            await _ctx.SaveChangesAsync();
-            return RedirectToAction("Index");
+            _repo.AddPost(_post);
+            if (await _repo.SaveChangesAsync())
+            {
+                return RedirectToAction("Index");
+            }
+            else {
+                return View(_post);
+            }
+            
         }
     }
 }
