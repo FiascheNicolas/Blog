@@ -1,1 +1,16 @@
-﻿<h2>Post Page</h2>
+﻿@model Post
+
+<ul>
+    <li>
+        <a>@Model.Id</a>
+    </li>
+    <li>
+        <a>@Model.Body</a>
+    </li>
+    <li>
+        <a>@Model.Title</a>
+    </li>
+    <li>
+        <a>@Model.Created</a>
+    </li>
+</ul>

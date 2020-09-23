@@ -19,23 +19,47 @@ namespace Blog.Controllers
         }
 
         public IActionResult Index() {
-            return View();
+            var LstPosts = _repo.GetAllPost();
+            return View(LstPosts);
         }
 
-        public IActionResult Post()
+        public IActionResult Post(int id)
         {
-            return View();
+            var post = _repo.GetPost(id);
+            return View(post);
         }
 
-        public IActionResult Edit()
+        public IActionResult Edit(int? id)
         {
-            return View(new Post());
+            if (id == null)
+            {
+                return View(new Post());
+            }
+            else
+            {
+                var post = _repo.GetPost(id.Value);
+                return View(post);
+            }
+        }
+
+        public async Task<IActionResult> Remove(int id)
+        {
+            _repo.RemovePost(id);
+            await _repo.SaveChangesAsync();
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
         public async Task<IActionResult> Edit(Post _post)
         {
-            _repo.AddPost(_post);
+            if (_post.Id != 0)
+            {
+                _repo.UpdatePost(_post);
+            }
+            else
+            {
+                _repo.AddPost(_post);
+            }
             if (await _repo.SaveChangesAsync())
             {
                 return RedirectToAction("Index");

@@ -10,9 +10,7 @@
     <div>
         @* Se necesita importar @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers en viewImports *@
         <a asp-controller="Home" asp-action="Index">Home</a>
-        <a asp-controller="Home" asp-action="Post">Post</a>
-        <a asp-controller="Home" asp-action="Edit">Edit</a>
-        @*<a href="@Url.Action("Post", "Home")">Test</a>*@ @*Forma alternativa*@
+        <a asp-controller="Home" asp-action="Edit">Create post</a>
     </div>
     <div>
         @RenderBody()
