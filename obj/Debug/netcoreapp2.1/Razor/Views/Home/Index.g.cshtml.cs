@@ -61,7 +61,7 @@ using Blog.Models;
             WriteLiteral("            <li>\r\n                ");
             EndContext();
             BeginContext(129, 82, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "edd59c52b6a94f85863412355594c26e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9a39b65e9947498db60c211742a590df", async() => {
                 BeginContext(197, 10, false);
 #line 8 "C:\Users\Nicolas\source\repos\Blog\Blog\Views\Home\Index.cshtml"
                                                                               Write(post.Title);
@@ -102,7 +102,7 @@ using Blog.Models;
             WriteLiteral("\r\n                ");
             EndContext();
             BeginContext(229, 75, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "228958a2209a43728df1ae7e872bae04", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6a98f8c0f35a4534932449003fe45598", async() => {
                 BeginContext(296, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -139,7 +139,7 @@ using Blog.Models;
             WriteLiteral("\r\n                ");
             EndContext();
             BeginContext(322, 79, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f3a7dc8da650426e80a1ddfff7e5129b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7fbd21097fad42af8dee01b4c8b281b5", async() => {
                 BeginContext(391, 6, true);
                 WriteLiteral("Remove");
                 EndContext();
