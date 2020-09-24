@@ -10,7 +10,7 @@
     <div>
         @* Se necesita importar @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers en viewImports *@
         <a asp-controller="Home" asp-action="Index">Home</a>
-        <a asp-controller="Home" asp-action="Edit">Create post</a>
+        <a asp-controller="Panel" asp-action="Edit">Create post</a>
 
         @if (User.Identity.IsAuthenticated)
         {
@@ -20,6 +20,7 @@
         {
             <a asp-controller="Auth" asp-action="Login">Sign in</a>
         }
+        <a asp-controller="Panel" asp-action="Index">Admin panel</a>
 
     </div>
     <div>

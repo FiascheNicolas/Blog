@@ -27,15 +27,19 @@ namespace Blog
         {
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(_config["DefaultConnection"]));
             services.AddTransient<IRepository, Repository>();
-            services.AddDefaultIdentity<IdentityUser>(options => 
+            services.AddIdentity<IdentityUser, IdentityRole>(options => 
             {
                 options.Password.RequireDigit = false;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequiredLength = 6;
             })
-                .AddRoles<IdentityRole>()
+                //.AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>();
+
+            services.ConfigureApplicationCookie(options => {
+                options.LoginPath = "/Auth/login";
+            });
             services.AddMvc();
         }
 
