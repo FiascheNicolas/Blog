@@ -1,0 +1,87 @@
+﻿a {
+    color: white;
+    text-decoration: none;
+}
+
+nav {
+    background-color: #0034dc;
+    height: 50px;
+    width: 100%;
+    text-align:center;
+}
+
+nav a {
+    display: inline-block;
+    height: 100%;
+    padding: 15px;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+    background-image: url('../content/static/background.jpg');
+    background-size: cover;
+}
+
+.title{
+    position: relative;
+    color: white;
+    font-size:100px;
+    width:100%;
+    text-shadow: 0 0 8px #000000;
+}
+
+.container {
+    text-align: center;
+    max-width: 800px;
+    width: 50%;
+    margin: auto;
+}
+
+.post .postTitle {
+    color:#0034dc;
+    font-size:30px;
+}
+
+.post img {
+    width:500px;
+    height:auto;
+}
+
+.postContainer {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    background-color: #0092ff;
+    border-radius: 15px;
+}
+
+.post {
+    max-width: 800px;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    border-radius: 15px;
+    border-bottom: 3px solid #e2e2e2;
+}
+
+.postRow{
+    text-align:center;
+}
+
+.login {
+    position: relative;
+    max-width: 500px;
+    height: 300px;
+    background-color: #0092ff;
+    margin: auto;
+}
+
+.loginContent {
+    top: 50%;
+}
+
+.loginRow {
+    text-align: center;
+}

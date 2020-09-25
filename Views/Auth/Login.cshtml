@@ -2,14 +2,21 @@
 
 
 <form asp-controller="Auth" asp-action="Login" method="post">
-
-    <div>
-        <label>Username</label>
-        <input asp-for="UserName" />
+    <div class="login">
+        <div class="loginContent">
+            <div class="loginRow">
+                <label>Username</label>
+                <div>
+                    <input asp-for="UserName" />
+                </div>
+            </div>
+            <div class="loginRow">
+                <label>Password</label>
+                <div>
+                    <input asp-for="Password" />
+                </div>
+            </div>
+            <div class="loginRow"><input type="submit" value="Sign in" /></div>
+        </div>
     </div>
-    <div>
-        <label>Password</label>
-        <input asp-for="Password" />
-    </div>
-    <input type="submit" value="Sign in" />
 </form>

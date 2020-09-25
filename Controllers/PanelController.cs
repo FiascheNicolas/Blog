@@ -37,10 +37,12 @@ namespace Blog.Controllers
 
         public IActionResult Edit(int? id)
         {
+            //Create post
             if (id == null)
             {
                 return View(new PostViewModel());
             }
+            //Edit post
             else
             {
                 var post = _repo.GetPost(id.Value);

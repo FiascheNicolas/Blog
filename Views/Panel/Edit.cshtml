@@ -1,9 +1,9 @@
 ﻿@model PostViewModel
 
-@{ 
+@{
 
 }
-
+<link href="~/lib/Trumbowyg-master/dist/ui/trumbowyg.min.css" rel="stylesheet" />
 <div>
     <form asp-controller="Panel" asp-action="Edit" method="post" enctype="multipart/form-data">
         <div>
@@ -21,3 +21,8 @@
         <button type="submit" value="Submit">Guardar</button>
     </form>
 </div>
+
+@section scripts{
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="~/lib/Trumbowyg-master/dist/trumbowyg.min.js"></script>
+}

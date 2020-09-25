@@ -25,7 +25,6 @@ namespace Blog.Data.FileManager
         {
             try
             {
-
                 var save_path = Path.Combine(_imagePath);
                 if (!Directory.Exists(save_path))
                 {
