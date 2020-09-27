@@ -2,7 +2,11 @@
 <div class="container">
     <span class="title">Blog</span>
 </div>
-
+@{
+    ViewBag.Title = "Blog Website";
+    ViewBag.Description = "Blog description";
+    ViewBag.Keywords = "blog programming travel photography";
+}
 <div class="postContainer">
     @foreach (Post post in Model)
     {
