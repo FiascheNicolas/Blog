@@ -25,11 +25,11 @@ namespace Blog.Data.Repository
             return _ctx.Posts.ToList();
         }
 
-        public List<Post> GetAllPost(string Category)
+        public List<Post> GetAllPost(int idCategory)
         {
-            Func<Post, bool> InCategory = (post) => { return post.Category.ToLower().Equals(Category.ToLower()); };
-
-            return _ctx.Posts.Where(post => InCategory(post)).ToList();
+            //Func<Post, bool> InCategory = (post) => { return post.Category.ToLower().Equals(GetCategoriesById(idCategory).Category.ToLower()); };
+            Categories category = GetCategoriesById(idCategory);
+            return _ctx.Posts.Where(post => post.Category.ToLower().Equals(category.Category.ToLower())).ToList();
         }
 
         public Post GetPost(int id)
@@ -57,6 +57,21 @@ namespace Blog.Data.Repository
                 return false;
             }
             throw new NotImplementedException();
+        }
+
+        public List<Categories> GetAllCategories()
+        {
+            return _ctx.Categories.ToList();
+        }
+
+        public Categories GetCategoriesByName(string category)
+        {
+            return _ctx.Categories.Where(x => x.Category.ToLower().Equals(category.ToLower())).FirstOrDefault();
+        }
+
+        public Categories GetCategoriesById(int id)
+        {
+            return _ctx.Categories.Where(x => x.Id == id).FirstOrDefault();
         }
     }
 }

@@ -3,7 +3,9 @@ using Blog.Data.Repository;
 using Blog.Models;
 using Blog.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,15 +39,18 @@ namespace Blog.Controllers
 
         public IActionResult Edit(int? id)
         {
+            var categories = GetCategories();
             //Create post
             if (id == null)
             {
+                ViewData["Categories"] = new SelectList(categories, "Category", "Category", categories.FirstOrDefault().Category);
                 return View(new PostViewModel());
             }
             //Edit post
             else
             {
                 var post = _repo.GetPost(id.Value);
+                ViewData["Categories"] = new SelectList(categories, "Category", "Category", post.Category == null ? categories.FirstOrDefault().Category : post.Category);
                 return View(new PostViewModel
                 {
                     Id = post.Id,
@@ -53,8 +58,7 @@ namespace Blog.Controllers
                     Body = post.Body,
                     CurrentImage = post.Image,
                     Description = post.Description,
-                    Tags = post.Tags,
-                    Category = post.Category
+                    Tags = post.Tags
                 });
             }
         }
@@ -69,7 +73,7 @@ namespace Blog.Controllers
                 Body = vm.Body,
                 Description = vm.Description,
                 Tags = vm.Tags,
-                Category = vm.Category,
+                Category = vm.Category
             };
 
             if (vm.Image == null)
@@ -97,6 +101,10 @@ namespace Blog.Controllers
                 return View(_post);
             }
 
+        }
+
+        public List<Categories> GetCategories() {
+            return _repo.GetAllCategories();
         }
     }
 }

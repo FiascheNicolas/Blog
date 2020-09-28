@@ -14,10 +14,9 @@
 </head>
 <body>
     <div>
-        <nav>
+        <nav id="layoutNav">
             @* Se necesita importar @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers en viewImports *@
             <a asp-controller="Home" asp-action="Index">Home</a>
-            <a asp-controller="Home" asp-action="Index" asp-route-category="Programming">Programming</a>
             <a asp-controller="Panel" asp-action="Edit">Create post</a>
             @if (User.Identity.IsAuthenticated)
             {
@@ -36,3 +35,23 @@
     @RenderSection("scripts", false)
 </body>
 </html>
+
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: '/Panel/GetCategories',
+            dataType: 'json',
+            data: {
+            },
+            success: function (data) {
+                $.each(data, function (key,value) {
+                    console.log(value.category);
+                    $('#layoutNav').append("<a href='/?idCategory=" + value.id + "'>" + value.category + "</a>");
+                });
+            },
+            error: function (req, status, error) {
+                console.log("ERROR");
+            }
+        }); 
+    });
+</script>

@@ -68,6 +68,7 @@ body {
 
 .postRow{
     text-align:center;
+    font-size:20px;
 }
 
 .login {
@@ -87,5 +88,22 @@ body {
 }
 
 .bodypost {
+    background-color:#b2b2b2;
+    border-radius:15px;
+}
+
+.editor{
     background-color:white;
+}
+
+.editorContainer {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    background-color:skyblue;
+    border-radius:15px;
+}
+
+.panelTable {
+    margin: auto;
 }
