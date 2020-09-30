@@ -5,9 +5,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewBag.Title</title>
-    <meta name="description"  content="@ViewBag.Description"/>
-    <meta name="keywords"  content="@ViewBag.Keywords"/>
+    <meta name="description" content="@ViewBag.Description" />
+    <meta name="keywords" content="@ViewBag.Keywords" />
+    <environment include="Development">
     <link href="~/css/site.css" rel="stylesheet" />
+    </environment>
+    <environment include="Production">
+        <link href="~/css/site.min.css" rel="stylesheet" />
+    </environment>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="~/lib/Trumbowyg-master/dist/trumbowyg.min.js"></script>
     <link href="~/lib/Trumbowyg-master/dist/ui/trumbowyg.min.css" rel="stylesheet" />
@@ -46,7 +51,6 @@
             },
             success: function (data) {
                 $.each(data, function (key,value) {
-                    console.log(value.category);
                     $('#layoutNav').append("<a href='" + urlcontent + "/?idCategory=" + value.id + "'>" + value.category + "</a>");
                 });
             },

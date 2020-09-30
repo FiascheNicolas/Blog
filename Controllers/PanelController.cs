@@ -81,6 +81,11 @@ namespace Blog.Controllers
                 _post.Image = vm.CurrentImage;
             }
             else {
+
+                if (!string.IsNullOrEmpty(vm.CurrentImage)) {
+                    _fileManager.RemoveImage(vm.CurrentImage);
+                }
+
                 _post.Image = await _fileManager.SaveImage(vm.Image);
             }
 

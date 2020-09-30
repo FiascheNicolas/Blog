@@ -42,7 +42,10 @@ namespace Blog
             services.ConfigureApplicationCookie(options => {
                 options.LoginPath = "/Auth/login";
             });
-            services.AddMvc();
+            services.AddMvc(options =>
+            {
+                options.CacheProfiles.Add("Monthly", new Microsoft.AspNetCore.Mvc.CacheProfile { Duration = 60*60*24*7*4});
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

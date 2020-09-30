@@ -87,7 +87,7 @@ using Blog.ViewModels;
             WriteLiteral("</span>\r\n            </div>\r\n            <div class=\"postRow\">\r\n                ");
             EndContext();
             BeginContext(623, 136, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c192c9341174a11a916b695f01828da", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9d7bf9c11d8a4e64b24b54950fe842eb", async() => {
                 BeginContext(690, 26, true);
                 WriteLiteral("\r\n                    <img");
                 EndContext();
