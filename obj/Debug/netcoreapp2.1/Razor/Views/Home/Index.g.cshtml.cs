@@ -19,12 +19,17 @@ using Blog.Models;
 #line default
 #line hidden
 #line 3 "C:\Users\Nicolas\source\repos\Blog\Blog\Views\_ViewImports.cshtml"
+using Blog.Models.Comments;
+
+#line default
+#line hidden
+#line 4 "C:\Users\Nicolas\source\repos\Blog\Blog\Views\_ViewImports.cshtml"
 using Blog.ViewModels;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"294fa89656e0fbfdc5f4d8dba3de3bb753bdef0a", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9441f6bc3cc00f7951c7eb7911917222fac2c378", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4f6dacf880d8b1262d2ea06921b70e4a8bd9f2a3", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Post>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Home", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -87,7 +92,7 @@ using Blog.ViewModels;
             WriteLiteral("</span>\r\n            </div>\r\n            <div class=\"postRow\">\r\n                ");
             EndContext();
             BeginContext(623, 136, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3e56d607e564460bac552df90696ba99", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7666000954c34f54ae00b49c46b45e72", async() => {
                 BeginContext(690, 26, true);
                 WriteLiteral("\r\n                    <img");
                 EndContext();

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Blog.Models;
+using Blog.Models.Comments;
+using Microsoft.EntityFrameworkCore;
 
 namespace Blog.Data.Repository
 {
@@ -32,9 +34,17 @@ namespace Blog.Data.Repository
             return _ctx.Posts.Where(post => post.Category.ToLower().Equals(category.Category.ToLower())).ToList();
         }
 
+        //public Post GetPost(int id)
+        //{
+        //    return _ctx.Posts.Where(post => post.Id == id).FirstOrDefault();
+        //}
+
         public Post GetPost(int id)
         {
-            return _ctx.Posts.Where(post => post.Id == id).FirstOrDefault();
+            return _ctx.Posts
+                .Include(p => p.MainComments)
+                .ThenInclude(mc => mc.SubComments)
+                .FirstOrDefault(post => post.Id == id);
         }
 
         public void RemovePost(int id)
@@ -72,6 +82,11 @@ namespace Blog.Data.Repository
         public Categories GetCategoriesById(int id)
         {
             return _ctx.Categories.Where(x => x.Id == id).FirstOrDefault();
+        }
+
+        public void AddSubComment(SubComment comment)
+        {
+            _ctx.SubComments.Add(comment);
         }
     }
 }
