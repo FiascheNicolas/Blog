@@ -35,18 +35,19 @@
     @RenderSection("scripts", false)
 </body>
 </html>
-
 <script>
     $(document).ready(function () {
+        var urlcontent = '@Url.Content("~")';
+        var url = window.location.protocol + "//" + window.location.host + urlcontent;
         $.ajax({
-            url: '/Panel/GetCategories',
+            url: url + '/Panel/GetCategories',
             dataType: 'json',
             data: {
             },
             success: function (data) {
                 $.each(data, function (key,value) {
                     console.log(value.category);
-                    $('#layoutNav').append("<a href='/?idCategory=" + value.id + "'>" + value.category + "</a>");
+                    $('#layoutNav').append("<a href='" + urlcontent + "/?idCategory=" + value.id + "'>" + value.category + "</a>");
                 });
             },
             error: function (req, status, error) {

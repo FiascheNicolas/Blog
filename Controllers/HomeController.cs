@@ -21,22 +21,32 @@ namespace Blog.Controllers
             _fileManager = fileManager;
         }
 
-        public IActionResult Index(int? idCategory)
-        {
-            var LstPosts = idCategory == null ? _repo.GetAllPost() : _repo.GetAllPost(idCategory.Value);
-            return View(LstPosts);
-        }
+        //public IActionResult Index(int? idCategory)
+        //{
+        //    var LstPosts = idCategory == null ? _repo.GetAllPost() : _repo.GetAllPost(idCategory.Value);
+        //    return View(LstPosts);
+        //}
 
-        public IActionResult Post(int id)
-        {
-            var post = _repo.GetPost(id);
-            return View(post);
-        }
+        public IActionResult Index(int? idCategory) => View(idCategory == null ? _repo.GetAllPost() : _repo.GetAllPost(idCategory.Value));
+
+
+        //public IActionResult Post(int id)
+        //{
+        //    var post = _repo.GetPost(id);
+        //    return View(post);
+        //}
+
+        public IActionResult Post(int id)=> View(_repo.GetPost(id));
+
+        //[HttpGet("/Image/{image}")]
+        //public IActionResult Image(string image) {
+        //    var ext = image.Substring(image.LastIndexOf('.') + 1);
+        //    return new FileStreamResult(_fileManager.ImageStream(image), $"image/{ext}");
+        //}
 
         [HttpGet("/Image/{image}")]
-        public IActionResult Image(string image) {
-            var ext = image.Substring(image.LastIndexOf('.') + 1);
-            return new FileStreamResult(_fileManager.ImageStream(image), $"image/{ext}");
-        }
+        public IActionResult Image(string image)=>
+            new FileStreamResult(_fileManager.ImageStream(image), $"image/{image.Substring(image.LastIndexOf('.') + 1)}");
+        
     }
 }
