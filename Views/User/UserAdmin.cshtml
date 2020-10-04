@@ -1,0 +1,22 @@
+﻿@model UserManagerViewModel
+
+@{
+    var base_path = Context.Request.PathBase;
+}
+
+<div class="postContainer">
+    @foreach (Post post in Model.LstPost)
+    {
+        var image_path = $"{base_path}/image/{post.Image}";
+        <div class="post">
+            <div class="postRow">
+                <span class="postTitle">@post.Title</span>
+            </div>
+            <div class="postRow">
+                <a asp-controller="Home" asp-action="Post" asp-route-id="@post.Id">
+                    <img src="@image_path" />
+                </a>
+            </div>
+        </div>
+    }
+</div>

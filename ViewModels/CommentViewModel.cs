@@ -13,7 +13,7 @@ namespace Blog.ViewModels
         public int PostId { get; set; }
         [Required]
         public int MainCommentId { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Mensaje vacio.")]
         public string Message { get; set; }
     }
 }

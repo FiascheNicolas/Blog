@@ -14,6 +14,7 @@ namespace Blog.Data.Repository
         Post GetPost(int id);
         List<Post> GetAllPost();
         List<Post> GetAllPost(int idCategory);
+        List<Post> GetAllPostByUser(string idUser);
         void RemovePost(int id);
         void UpdatePost(Post post);
         void AddPost(Post post);
@@ -21,6 +22,9 @@ namespace Blog.Data.Repository
 
         //Posts
         List<Categories> GetAllCategories();
+
+        //Users
+        bool UserExist(string user);
 
         Task<bool> SaveChangesAsync();
     }

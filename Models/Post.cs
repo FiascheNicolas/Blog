@@ -14,6 +14,7 @@ namespace Blog.Models
         public string Description { get; set; } = "";
         public string Tags { get; set; } = "";
         public string Category { get; set; } = "";
+        public string IdOwner { get; set; }
 
         public DateTime Created { get; set; } = DateTime.Now;
 

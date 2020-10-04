@@ -8,7 +8,7 @@
     <meta name="description" content="@ViewBag.Description" />
     <meta name="keywords" content="@ViewBag.Keywords" />
     <environment include="Development">
-    <link href="~/css/site.css" rel="stylesheet" />
+        <link href="~/css/site.css" rel="stylesheet" />
     </environment>
     <environment include="Production">
         <link href="~/css/site.min.css" rel="stylesheet" />
@@ -17,21 +17,30 @@
     <script src="~/lib/Trumbowyg-master/dist/trumbowyg.min.js"></script>
     <link href="~/lib/Trumbowyg-master/dist/ui/trumbowyg.min.css" rel="stylesheet" />
 </head>
+
 <body>
     <div>
         <nav id="layoutNav">
             @* Se necesita importar @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers en viewImports *@
             <a asp-controller="Home" asp-action="Index">Home</a>
-            <a asp-controller="Panel" asp-action="Edit">Create post</a>
             @if (User.Identity.IsAuthenticated)
             {
+                <a asp-controller="PostManager" asp-action="Edit">Create post</a>
+                @if (User.Identity.Name.Equals("admin"))
+                {
+                    <a asp-controller="Panel" asp-action="Index">Admin panel</a>
+                }
+                else
+                {
+                    <a asp-controller="User" asp-action="UserAdmin">User administrator</a>
+                }
                 <a asp-controller="Auth" asp-action="Logout">Logout</a>
             }
             else
             {
-                <a asp-controller="Auth" asp-action="Login">Sign in</a>
+                <a asp-controller="Auth" asp-action="Login">Login</a>
+                <a asp-controller="Auth" asp-action="SignIn">Sign in</a>
             }
-            <a asp-controller="Panel" asp-action="Index">Admin panel</a>
         </nav>
     </div>
     <div>
@@ -57,6 +66,6 @@
             error: function (req, status, error) {
                 console.log("ERROR");
             }
-        }); 
+        });
     });
 </script>

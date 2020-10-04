@@ -34,6 +34,11 @@ namespace Blog
                     //create a role
                     roleMgr.CreateAsync(adminRole).GetAwaiter().GetResult();
                 }
+                if (!ctx.Roles.Where(x => x.Name == "User").Any())
+                {
+                    var userRole = new IdentityRole("User");
+                    roleMgr.CreateAsync(userRole).GetAwaiter().GetResult();
+                }
 
                 if (!ctx.Users.Any(u => u.UserName == "admin"))
                 {

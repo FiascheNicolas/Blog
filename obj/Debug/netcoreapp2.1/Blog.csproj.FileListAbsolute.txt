@@ -27,5 +27,7 @@ C:\Users\Nicolas\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Home
 C:\Users\Nicolas\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
 C:\Users\Nicolas\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Auth\Login.g.cshtml.cs
 C:\Users\Nicolas\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Panel\Index.g.cshtml.cs
-C:\Users\Nicolas\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Panel\Edit.g.cshtml.cs
 C:\Users\Nicolas\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Home\_MainComment.g.cshtml.cs
+C:\Users\Nicolas\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Auth\SignIn.g.cshtml.cs
+C:\Users\Nicolas\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\User\UserAdmin.g.cshtml.cs
+C:\Users\Nicolas\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\PostManager\Edit.g.cshtml.cs

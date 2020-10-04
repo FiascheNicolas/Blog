@@ -1,18 +1,24 @@
-﻿@model LoginViewModel
+﻿@model SignInViewModel
 
-<form asp-controller="Auth" asp-action="Login" method="post">
+<form asp-controller="Auth" asp-action="SignIn" method="post">
     <div class="login">
         <div class="loginContent">
             <div class="loginRow">
+                <label>Email</label>
+                <div>
+                    <input asp-for="Email" required/>
+                </div>
+            </div>
+            <div class="loginRow">
                 <label>Username</label>
                 <div>
-                    <input asp-for="UserName" />
+                    <input asp-for="UserName" required/>
                 </div>
             </div>
             <div class="loginRow">
                 <label>Password</label>
                 <div>
-                    <input asp-for="Password" />
+                    <input asp-for="Password" required/>
                 </div>
             </div>
             <div class="loginRow"><input type="submit" value="Sign in" /></div>

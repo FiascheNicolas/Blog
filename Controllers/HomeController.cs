@@ -10,6 +10,7 @@ using Blog.Data.Repository;
 using Blog.Data.FileManager;
 using Blog.Models.Comments;
 using Blog.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Blog.Controllers
 {
@@ -25,12 +26,10 @@ namespace Blog.Controllers
 
         public IActionResult Index(int? idCategory) => View(idCategory == null ? _repo.GetAllPost() : _repo.GetAllPost(idCategory.Value));
 
+        [Authorize]
         public IActionResult Post(int id) => View(_repo.GetPost(id));
 
         public async Task<IActionResult> Comment(CommentViewModel vm) {
-            if (!ModelState.IsValid) {
-                return RedirectToAction("Post", new { id = vm.PostId });
-            }
             var post = _repo.GetPost(vm.PostId);
             if (vm.MainCommentId == 0)
             {

@@ -26,7 +26,7 @@
         <div class="postRow">
             @Model.Created
         </div>
-        <div class="comment-section">
+        <div class="postRow">
             @{
                 await Html.RenderPartialAsync("_MainComment", new CommentViewModel { PostId = Model.Id, MainCommentId = 0 });
             }

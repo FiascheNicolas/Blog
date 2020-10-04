@@ -27,17 +27,16 @@ namespace Blog.Data.Repository
             return _ctx.Posts.ToList();
         }
 
+        public List<Post> GetAllPostByUser(string idUser)
+        {
+            return _ctx.Posts.Where(user => user.IdOwner.Equals(idUser)).ToList();
+        }
+
         public List<Post> GetAllPost(int idCategory)
         {
-            //Func<Post, bool> InCategory = (post) => { return post.Category.ToLower().Equals(GetCategoriesById(idCategory).Category.ToLower()); };
             Categories category = GetCategoriesById(idCategory);
             return _ctx.Posts.Where(post => post.Category.ToLower().Equals(category.Category.ToLower())).ToList();
         }
-
-        //public Post GetPost(int id)
-        //{
-        //    return _ctx.Posts.Where(post => post.Id == id).FirstOrDefault();
-        //}
 
         public Post GetPost(int id)
         {
@@ -87,6 +86,11 @@ namespace Blog.Data.Repository
         public void AddSubComment(SubComment comment)
         {
             _ctx.SubComments.Add(comment);
+        }
+
+        public bool UserExist(string user)
+        {
+            return _ctx.Users.Any(u => u.UserName == user);
         }
     }
 }
