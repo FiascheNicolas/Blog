@@ -48,7 +48,18 @@ namespace Blog.Data.Repository
 
         public void RemovePost(int id)
         {
-            _ctx.Posts.Remove(GetPost(id));
+            Post post = GetPost(id);
+            _ctx.Posts.Remove(post);
+
+            foreach (MainComment mc in post.MainComments)
+            {
+                _ctx.MainComments.Remove(mc);
+
+                foreach (SubComment sc in mc.SubComments)
+                {
+                    _ctx.SubComments.Remove(sc);
+                }
+            }
         }
 
         public void UpdatePost(Post post)
