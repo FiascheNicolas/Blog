@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Blog.Controllers
 {
-    [Authorize(Roles = "User")]
+    //[Authorize(Roles = "User")]
     public class UserController : Controller
     {
         private IRepository _repo;
@@ -30,6 +30,10 @@ namespace Blog.Controllers
             {
                 LstPost = _repo.GetAllPostByUser(user.Id)
             });
+        }
+
+        public IActionResult Users() {
+            return View(/*_repo.GetUsers()*/);
         }
     }
 }

@@ -25,6 +25,7 @@ namespace Blog.Data.Repository
 
         //Users
         bool UserExist(string user);
+        List<ApplicationUser> GetUsers();
 
         Task<bool> SaveChangesAsync();
     }

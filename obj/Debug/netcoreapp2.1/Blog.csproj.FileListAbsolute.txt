@@ -31,3 +31,4 @@ C:\Users\Nicolas\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Home
 C:\Users\Nicolas\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\Auth\SignIn.g.cshtml.cs
 C:\Users\Nicolas\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\User\UserAdmin.g.cshtml.cs
 C:\Users\Nicolas\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\PostManager\Edit.g.cshtml.cs
+C:\Users\Nicolas\source\repos\Blog\Blog\obj\Debug\netcoreapp2.1\Razor\Views\User\Users.g.cshtml.cs

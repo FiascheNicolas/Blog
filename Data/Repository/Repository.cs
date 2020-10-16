@@ -103,5 +103,10 @@ namespace Blog.Data.Repository
         {
             return _ctx.Users.Any(u => u.UserName == user);
         }
+
+        public List<ApplicationUser> GetUsers()
+        {
+            return _ctx.ApplicationUser.Where(x => x.Level != 1).ToList();
+        }
     }
 }
